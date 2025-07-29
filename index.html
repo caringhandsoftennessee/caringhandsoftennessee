@@ -24,6 +24,11 @@
       flex-wrap: wrap;
       gap: 30px;
       padding: 12px;
+
+      /* Sticky nav */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
@@ -50,6 +55,21 @@
       padding: 20px;
       background-color: #6A1B9A;
       color: white;
+    }
+
+    /* Buttons */
+    a.button {
+      background-color: #6A1B9A;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #4A148C;
     }
   </style>
 </head>
@@ -79,7 +99,7 @@
   <section id="newsletter">
     <h2>The Pulse Report</h2>
     <p>Our newsletter highlights our latest events, efforts, and student perspectives.</p>
-    <p><a href="https://caringhandsoftennessee.github.io/The-Pulse-Report/" target="_blank">📄 View The Pulse Report</a></p>
+    <p><a href="https://caringhandsoftennessee.github.io/The-Pulse-Report/" target="_blank" class="button">📄 View The Pulse Report</a></p>
 
     <h3>Become a Writer or Editor</h3>
     <p>Interested in contributing to our newsletter? Fill out the form below to apply.</p>
