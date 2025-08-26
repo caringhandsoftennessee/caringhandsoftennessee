@@ -1,135 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Caring Hands of Tennessee</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0; padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #6A1B9A;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    nav {
-      background: #4A148C;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 12px;
+import React from "react";
 
-      /* Sticky nav */
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      max-width: 900px;
-      background: white;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #4A148C;
-    }
-    iframe {
-      border: none;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #6A1B9A;
-      color: white;
-    }
 
-    /* Buttons */
-    a.button {
-      background-color: #6A1B9A;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #4A148C;
-    }
-  </style>
-</head>
-<body>
+export default function CaringHandsSite() {
+return (
+<div className="min-h-screen bg-gray-50 text-gray-900" style={{"--brand-navy":"#0b3d91","--brand-accent":"#e94b35","--brand-warm":"#f7c948"}}>
+{/* NAV */}
+<header className="bg-white shadow-md">
+<div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+<div className="flex items-center gap-4">
+<div className="w-12 h-12 rounded-md flex items-center justify-center bg-[var(--brand-navy)] text-white font-bold">CH</div>
+<div>
+<h1 className="text-xl font-semibold">Caring Hands of Tennessee</h1>
+<p className="text-sm text-gray-500">Serving families · Restoring hope</p>
+</div>
+</div>
 
-  <header>
-    <h1>Caring Hands of Tennessee</h1>
-    <p>Service. Compassion. Change.</p>
-  </header>
 
-  <nav>
-    <a href="#mission">Our Mission</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#tutoring">Tutoring</a>
-    <a href="#calendar">Calendar</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav className="hidden md:flex items-center gap-6 text-sm">
+<a href="#mission" className="hover:text-[var(--brand-navy)]">Mission</a>
+<a href="#programs" className="hover:text-[var(--brand-navy)]">Programs</a>
+<a href="#tutoring" className="hover:text-[var(--brand-navy)]">Tutoring</a>
+<a href="#getinvolved" className="hover:text-[var(--brand-navy)]">Get Involved</a>
+<a href="#contact" className="hover:text-[var(--brand-navy)]">Contact</a>
+<a href="#donate" className="ml-4 inline-flex items-center px-4 py-2 rounded-md bg-[var(--brand-accent)] text-white font-semibold shadow">Donate</a>
+</nav>
 
-  <section id="mission">
-    <h2>Our Mission</h2>
-    <p>
-      Caring Hands of Tennessee is a nonprofit organization dedicated to improving our community through volunteerism, service, and advocacy.
-      We aim to empower youth and uplift underserved populations through compassionate and consistent action.
-    </p>
-  </section>
 
-  <section id="newsletter">
-    <h2>The Pulse Report</h2>
-    <p>Our newsletter highlights our latest events, efforts, and student perspectives.</p>
-    <p><a href="https://caringhandsoftennessee.github.io/The-Pulse-Report/" target="_blank" class="button">📄 View The Pulse Report</a></p>
+<button className="md:hidden p-2 text-gray-700" aria-label="menu">☰</button>
+</div>
+</header>
 
-    <h3>Become a Writer or Editor</h3>
-    <p>Interested in contributing to our newsletter? Fill out the form below to apply.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOG6F1JqjUoCzPmpkYvUZCEKrD7M5VGHcvR2EP8q8P_Ri4Ww/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
-  </section>
 
-  <section id="tutoring">
-    <h2>Become a Tutor</h2>
-    <p>
-      Caring Hands of Tennessee is launching free tutoring sessions to support students in our community. If you’re interested in volunteering as a tutor, we’d love to have you!
-    </p>
-    <p>Please fill out the form below to sign up:</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTUTORFORMURL/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
-  </section>
+{/* HERO */}
+<section className="relative bg-white">
+<div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+<div>
+<h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Hands that heal, hearts that hold.</h2>
+<p className="mt-4 text-lg text-gray-600">Caring Hands of Tennessee provides essential support and resources to families in need across our state. We focus on food security, emergency assistance, education, and tutoring so every Tennessean can thrive.</p>
 
-  <section id="calendar">
-    <h2>Upcoming Events</h2>
-    <p>Stay up to date with our volunteer opportunities and chapter events.</p>
-    <iframe src="https://calendar.google.com/calendar/embed?src=caringhandstn%40gmail.com&ctz=America%2FChicago" style="border: 0" width="100%" height="600"></iframe>
-  </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:caringhandstn@gmail.com">caringhandstn@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/caringhandsoftennessee/" target="_blank">@caringhandsoftennessee</a></p>
-  </section>
+<div className="mt-8 flex gap-4">
+<a href="#donate" className="inline-flex items-center px-6 py-3 bg-[var(--brand-accent)] text-white rounded-md font-semibold shadow-lg">Donate Now</a>
+<a href="#programs" className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-md bg-white text-gray-800">Our Programs</a>
+</div>
+</div>
 
-  <footer>
-    <p>© 2025 Caring Hands of Tennessee. All rights reserved.</p>
-  </footer>
 
-</body>
-</html>
+<div aria-hidden className="relative">
+<div className="rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-[var(--brand-navy)] to-[var(--brand-warm)] h-72 md:h-96 flex items-end p-6 text-white">
+<div>
+<h3 className="text-2xl font-bold">Community First</h3>
+<p className="mt-2">Caring Hands is here for families across Tennessee every day.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+{/* MISSION */}
+<section id="mission" className="bg-[linear-gradient(90deg,#ffffff, #fbfbfd)]">
+<div className="max-w-6xl mx-auto px-6 py-16">
+<div className="grid md:grid-cols-3 gap-8 items-start">
+<div className="md:col-span-2">
+<h3 className="text-3xl font-bold">Our Mission</h3>
+<p className="mt-4 text-gray-600">Caring Hands of Tennessee exists to support people facing unexpected hardship by providing immediate assistance and long-term resources. We partner with local organizations, faith communities, and volunteers to deliver compassionate, practical help.</p>
+</div>
+
+
+<aside className="bg-white rounded-lg p-6 shadow-md">
+<h4 className="text-lg font-semibold">Quick Facts</h4>
+<dl className="mt-4 grid gap-3">
+<div>
+<dt className="text-xs text-gray-500">Founded</dt>
+<dd className="font-medium">2016</dd>
+</div>
+<div>
+<dt className="text-xs text-gray-500">Volunteers</dt>
+<dd className="font-medium">Hundreds statewide</dd>
+</div>
+<a href="#contact" className="mt-4 inline-block text-sm text-[var(--brand-navy)] underline">Get in touch</a>
+</dl>
+</aside>
+</div>
+</div>
+</section>
+
+
