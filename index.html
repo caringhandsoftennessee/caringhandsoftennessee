@@ -1,181 +1,124 @@
 import React from "react";
 
+// Caring Hands of Tennessee Website
+// Colors: dark blue (#0b2f6b) and white
+// Multi-page structure with navigation for GitHub Pages
+
 export default function CaringHandsSite() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900" style={{"--brand-navy":"#0b3d91","--brand-accent":"#e94b35","--brand-warm":"#f7c948"}}>
-      {/* NAV */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-md flex items-center justify-center bg-[var(--brand-navy)] text-white font-bold">CH</div>
-            <div>
-              <h1 className="text-xl font-semibold">Caring Hands of Tennessee</h1>
-              <p className="text-sm text-gray-500">Serving families · Restoring hope</p>
-            </div>
-          </div>
+    <div className="min-h-screen bg-white text-gray-900" style={{fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial'}}>
+      <style>{`
+        :root {
+          --brand: #0b2f6b;
+          --accent: #08407a;
+          --muted: #6b7280;
+          --white: #ffffff;
+        }
+        .brand-bg { background-color: var(--brand); }
+        .brand { color: var(--brand); }
+        .btn-brand { background-color: var(--brand); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.375rem; }
+        .btn-brand:hover { background-color: var(--accent); }
+      `}</style>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#mission" className="hover:text-[var(--brand-navy)]">Mission</a>
-            <a href="#programs" className="hover:text-[var(--brand-navy)]">Programs</a>
-            <a href="#tutoring" className="hover:text-[var(--brand-navy)]">Tutoring</a>
-            <a href="#getinvolved" className="hover:text-[var(--brand-navy)]">Get Involved</a>
-            <a href="#contact" className="hover:text-[var(--brand-navy)]">Contact</a>
-            <a href="#donate" className="ml-4 inline-flex items-center px-4 py-2 rounded-md bg-[var(--brand-accent)] text-white font-semibold shadow">Donate</a>
+      {/* Header Navigation */}
+      <header className="w-full brand-bg text-white shadow-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+          <h1 className="text-xl font-bold">Caring Hands of Tennessee</h1>
+          <nav className="space-x-6">
+            <a href="#home" className="hover:underline">Home</a>
+            <a href="#about" className="hover:underline">About</a>
+            <a href="#programs" className="hover:underline">Programs</a>
+            <a href="#get-involved" className="hover:underline">Get Involved</a>
+            <a href="#donate" className="hover:underline">Donate</a>
+            <a href="#impact" className="hover:underline">Impact</a>
+            <a href="#contact" className="hover:underline">Contact</a>
           </nav>
-
-          <button className="md:hidden p-2 text-gray-700" aria-label="menu">☰</button>
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Hands that heal, hearts that hold.</h2>
-            <p className="mt-4 text-lg text-gray-600">Caring Hands of Tennessee provides essential support and resources to families in need across our state. We focus on food security, emergency assistance, education, and tutoring so every Tennessean can thrive.</p>
+      {/* Hero / Home Section */}
+      <section id="home" className="brand-bg text-white text-center py-20 px-6">
+        <h2 className="text-4xl font-extrabold mb-4">Extending Compassion Through Education & Healthcare</h2>
+        <p className="max-w-2xl mx-auto text-lg mb-6">
+          Caring Hands of Tennessee works to expand opportunities for underserved communities across the state.
+        </p>
+        <a href="#donate" className="btn-brand inline-block">Donate Now</a>
+      </section>
 
-            <div className="mt-8 flex gap-4">
-              <a href="#donate" className="inline-flex items-center px-6 py-3 bg-[var(--brand-accent)] text-white rounded-md font-semibold shadow-lg">Donate Now</a>
-              <a href="#programs" className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-md bg-white text-gray-800">Our Programs</a>
+      {/* About Section */}
+      <section id="about" className="max-w-5xl mx-auto py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold brand mb-4">About Us</h3>
+        <p className="text-lg text-gray-700 mb-6">
+          Our mission is to create equitable access to education and healthcare. We believe in transparency, compassion, and community-driven change.
+        </p>
+        <p className="text-gray-600">Meet our team, explore our story, and review our annual reports to see how we operate with integrity and purpose.</p>
+      </section>
+
+      {/* Programs Section */}
+      <section id="programs" className="bg-gray-100 py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold brand mb-8">Our Programs</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white rounded-xl shadow-md">
+              <h4 className="text-xl font-semibold brand mb-2">Education</h4>
+              <p className="text-gray-700">Scholarships, mentorship, and after-school support for Tennessee students.</p>
             </div>
-          </div>
-
-          <div aria-hidden className="relative">
-            <div className="rounded-xl overflow-hidden shadow-xl bg-gradient-to-br from-[var(--brand-navy)] to-[var(--brand-warm)] h-72 md:h-96 flex items-end p-6 text-white">
-              <div>
-                <h3 className="text-2xl font-bold">Community First</h3>
-                <p className="mt-2">Caring Hands is here for families across Tennessee every day.</p>
-              </div>
+            <div className="p-6 bg-white rounded-xl shadow-md">
+              <h4 className="text-xl font-semibold brand mb-2">Healthcare</h4>
+              <p className="text-gray-700">Awareness campaigns, health fairs, and access to basic care services.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl shadow-md">
+              <h4 className="text-xl font-semibold brand mb-2">Community</h4>
+              <p className="text-gray-700">Workshops, events, and resources to uplift local families.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MISSION */}
-      <section id="mission" className="bg-[linear-gradient(90deg,#ffffff, #fbfbfd)]">
-        <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-3 gap-8 items-start">
-            <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold">Our Mission</h3>
-              <p className="mt-4 text-gray-600">Caring Hands of Tennessee exists to support people facing unexpected hardship by providing immediate assistance and long-term resources. We partner with local organizations, faith communities, and volunteers to deliver compassionate, practical help.</p>
-            </div>
+      {/* Get Involved Section */}
+      <section id="get-involved" className="max-w-5xl mx-auto py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold brand mb-4">Get Involved</h3>
+        <p className="text-gray-700 mb-6">Volunteer, donate, or partner with us to help make lasting change in Tennessee.</p>
+        <a href="#contact" className="btn-brand inline-block">Join Us</a>
+      </section>
 
-            <aside className="bg-white rounded-lg p-6 shadow-md">
-              <h4 className="text-lg font-semibold">Quick Facts</h4>
-              <dl className="mt-4 grid gap-3">
-                <div>
-                  <dt className="text-xs text-gray-500">Founded</dt>
-                  <dd className="font-medium">2016</dd>
-                </div>
-                <div>
-                  <dt className="text-xs text-gray-500">Volunteers</dt>
-                  <dd className="font-medium">Hundreds statewide</dd>
-                </div>
-                <a href="#contact" className="mt-4 inline-block text-sm text-[var(--brand-navy)] underline">Get in touch</a>
-              </dl>
-            </aside>
+      {/* Donate Section */}
+      <section id="donate" className="bg-gray-100 py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold brand mb-4">Donate</h3>
+        <p className="text-gray-700 mb-6">Your support directly impacts education and healthcare access. Every dollar counts.</p>
+        <a href="https://donate.example.com" target="_blank" rel="noopener noreferrer" className="btn-brand inline-block">Give Today</a>
+      </section>
+
+      {/* Impact Section */}
+      <section id="impact" className="max-w-6xl mx-auto py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold brand mb-8">Impact & Stories</h3>
+        <p className="text-gray-700 mb-8">Hear from those whose lives have been touched by Caring Hands of Tennessee.</p>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="p-6 bg-white rounded-xl shadow-md">
+            <p className="italic mb-2">“Thanks to the mentorship program, I’m the first in my family to attend college.”</p>
+            <p className="font-semibold">– Student, Nashville</p>
+          </div>
+          <div className="p-6 bg-white rounded-xl shadow-md">
+            <p className="italic mb-2">“The health fair helped me get the care I needed when I had nowhere else to turn.”</p>
+            <p className="font-semibold">– Community Member, Memphis</p>
           </div>
         </div>
       </section>
 
-      {/* PROGRAMS */}
-      <section id="programs" className="max-w-6xl mx-auto px-6 py-16">
-        <h3 className="text-3xl font-bold">Programs</h3>
-        <p className="mt-2 text-gray-600">Our programs are designed to meet immediate needs while creating long-term outcomes.</p>
-
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
-            <h4 className="font-semibold text-lg">Mobile Pantry</h4>
-            <p className="mt-3 text-sm text-gray-500">Weekly distributions in rural and urban neighborhoods to increase food access.</p>
-          </div>
-
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
-            <h4 className="font-semibold text-lg">Relief Grants</h4>
-            <p className="mt-3 text-sm text-gray-500">Emergency funding disbursed quickly for families facing hardship.</p>
-          </div>
-
-          <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
-            <h4 className="font-semibold text-lg">Volunteer Corps</h4>
-            <p className="mt-3 text-sm text-gray-500">Train, match, and mobilize volunteers for local distribution events.</p>
-          </div>
-        </div>
+      {/* Contact Section */}
+      <section id="contact" className="bg-gray-100 py-16 px-6 text-center">
+        <h3 className="text-3xl font-bold brand mb-4">Contact Us</h3>
+        <p className="mb-6 text-gray-700">We’d love to hear from you. Whether you’d like to volunteer, donate, or partner with us, reach out today.</p>
+        <p className="mb-2">Email: <a href="mailto:info@caringhandsTN.org" className="underline brand">info@caringhandsTN.org</a></p>
+        <p className="mb-2">Phone: (555) 123-4567</p>
+        <p>Address: 123 Main St, Nashville, TN</p>
       </section>
 
-      {/* TUTORING */}
-      <section id="tutoring" className="bg-gradient-to-r from-gray-50 to-white py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold">Tutoring Sign-Up</h3>
-          <p className="mt-3 text-gray-600">We offer free tutoring sessions for students who need extra support. Reserve your spot below.</p>
-
-          <form className="mt-8 max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
-            <div className="grid md:grid-cols-2 gap-4">
-              <input type="text" placeholder="Full Name" className="w-full border p-3 rounded-md" required />
-              <input type="email" placeholder="Email" className="w-full border p-3 rounded-md" required />
-              <input type="text" placeholder="Grade Level" className="w-full border p-3 rounded-md" required />
-              <select className="w-full border p-3 rounded-md" required>
-                <option>Select Subject</option>
-                <option>Math</option>
-                <option>Reading</option>
-                <option>Science</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div className="mt-4">
-              <label className="block text-sm text-gray-600 mb-2">Preferred Time Slot</label>
-              <input type="datetime-local" className="w-full border p-3 rounded-md" required />
-            </div>
-            <button type="submit" className="mt-6 w-full px-4 py-3 rounded-md bg-[var(--brand-navy)] text-white font-semibold">Sign Up</button>
-          </form>
-        </div>
-      </section>
-
-      {/* GET INVOLVED / DONATE */}
-      <section id="getinvolved" className="bg-gradient-to-r from-white to-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="text-2xl font-bold">Get Involved</h3>
-            <p className="mt-3 text-gray-600">Volunteer, partner, or host a drive. Small acts create lasting change.</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h4 className="font-semibold">Donate</h4>
-            <p className="mt-2 text-sm text-gray-500">Your gift funds emergency assistance and community programs. Gifts are tax-deductible.</p>
-            <button id="donate" className="mt-4 w-full px-4 py-3 rounded-md bg-[var(--brand-accent)] text-white font-semibold">Donate Securely</button>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer id="contact" className="bg-white border-t mt-12">
-        <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-6">
-          <div>
-            <h5 className="font-semibold">Caring Hands of Tennessee</h5>
-            <p className="mt-2 text-sm text-gray-500">PO Box 1234 · Nashville, TN</p>
-          </div>
-
-          <div>
-            <h5 className="font-semibold">Connect</h5>
-            <ul className="mt-2 text-sm text-gray-500">
-              <li><a>Facebook</a></li>
-              <li className="mt-1"><a>Instagram</a></li>
-              <li className="mt-1"><a>Twitter</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 className="font-semibold">Legal</h5>
-            <ul className="mt-2 text-sm text-gray-500">
-              <li>Privacy</li>
-              <li className="mt-1">Terms</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="text-center text-sm text-gray-400 py-6">© {new Date().getFullYear()} Caring Hands of Tennessee · All rights reserved</div>
+      {/* Footer */}
+      <footer className="brand-bg text-white py-6 text-center">
+        <p>&copy; {new Date().getFullYear()} Caring Hands of Tennessee. All Rights Reserved.</p>
       </footer>
     </div>
   );
 }
-
-
 
