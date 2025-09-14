@@ -1,124 +1,105 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caring Hands of Tennessee</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a1a3f; /* dark blue */
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      background: #08122d; /* slightly darker blue */
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 10px;
+    }
+    footer {
+      background: #08122d;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #0a1a3f;
+      padding: 10px 20px;
+      margin-top: 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Caring Hands of Tennessee</h1>
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#programs">Programs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-// Caring Hands of Tennessee Website
-// Colors: dark blue (#0b2f6b) and white
-// Multi-page structure with navigation for GitHub Pages
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      At Caring Hands of Tennessee, our mission is to increase access to education and healthcare opportunities for underserved communities. 
+      We are dedicated to creating lasting change through compassion, innovation, and advocacy.
+    </p>
+  </section>
 
-export default function CaringHandsSite() {
-  return (
-    <div className="min-h-screen bg-white text-gray-900" style={{fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial'}}>
-      <style>{`
-        :root {
-          --brand: #0b2f6b;
-          --accent: #08407a;
-          --muted: #6b7280;
-          --white: #ffffff;
-        }
-        .brand-bg { background-color: var(--brand); }
-        .brand { color: var(--brand); }
-        .btn-brand { background-color: var(--brand); color: var(--white); padding: 0.5rem 1rem; border-radius: 0.375rem; }
-        .btn-brand:hover { background-color: var(--accent); }
-      `}</style>
+  <section id="programs">
+    <h2>Our Programs</h2>
+    <p>
+      We provide a range of programs focused on education and healthcare, including:
+    </p>
+    <ul>
+      <li>Scholarship and tutoring support for students</li>
+      <li>Community health outreach and resources</li>
+      <li>Workshops promoting wellness and learning</li>
+    </ul>
+    <a href="#contact" class="btn">Get Involved</a>
+  </section>
 
-      {/* Header Navigation */}
-      <header className="w-full brand-bg text-white shadow-md sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-          <h1 className="text-xl font-bold">Caring Hands of Tennessee</h1>
-          <nav className="space-x-6">
-            <a href="#home" className="hover:underline">Home</a>
-            <a href="#about" className="hover:underline">About</a>
-            <a href="#programs" className="hover:underline">Programs</a>
-            <a href="#get-involved" className="hover:underline">Get Involved</a>
-            <a href="#donate" className="hover:underline">Donate</a>
-            <a href="#impact" className="hover:underline">Impact</a>
-            <a href="#contact" className="hover:underline">Contact</a>
-          </nav>
-        </div>
-      </header>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@caringhandstn.org" style="color:white;">info@caringhandstn.org</a></p>
+    <p>Address: Memphis, Tennessee</p>
+  </section>
 
-      {/* Hero / Home Section */}
-      <section id="home" className="brand-bg text-white text-center py-20 px-6">
-        <h2 className="text-4xl font-extrabold mb-4">Extending Compassion Through Education & Healthcare</h2>
-        <p className="max-w-2xl mx-auto text-lg mb-6">
-          Caring Hands of Tennessee works to expand opportunities for underserved communities across the state.
-        </p>
-        <a href="#donate" className="btn-brand inline-block">Donate Now</a>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="max-w-5xl mx-auto py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold brand mb-4">About Us</h3>
-        <p className="text-lg text-gray-700 mb-6">
-          Our mission is to create equitable access to education and healthcare. We believe in transparency, compassion, and community-driven change.
-        </p>
-        <p className="text-gray-600">Meet our team, explore our story, and review our annual reports to see how we operate with integrity and purpose.</p>
-      </section>
-
-      {/* Programs Section */}
-      <section id="programs" className="bg-gray-100 py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-3xl font-bold brand mb-8">Our Programs</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white rounded-xl shadow-md">
-              <h4 className="text-xl font-semibold brand mb-2">Education</h4>
-              <p className="text-gray-700">Scholarships, mentorship, and after-school support for Tennessee students.</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-md">
-              <h4 className="text-xl font-semibold brand mb-2">Healthcare</h4>
-              <p className="text-gray-700">Awareness campaigns, health fairs, and access to basic care services.</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-md">
-              <h4 className="text-xl font-semibold brand mb-2">Community</h4>
-              <p className="text-gray-700">Workshops, events, and resources to uplift local families.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Get Involved Section */}
-      <section id="get-involved" className="max-w-5xl mx-auto py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold brand mb-4">Get Involved</h3>
-        <p className="text-gray-700 mb-6">Volunteer, donate, or partner with us to help make lasting change in Tennessee.</p>
-        <a href="#contact" className="btn-brand inline-block">Join Us</a>
-      </section>
-
-      {/* Donate Section */}
-      <section id="donate" className="bg-gray-100 py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold brand mb-4">Donate</h3>
-        <p className="text-gray-700 mb-6">Your support directly impacts education and healthcare access. Every dollar counts.</p>
-        <a href="https://donate.example.com" target="_blank" rel="noopener noreferrer" className="btn-brand inline-block">Give Today</a>
-      </section>
-
-      {/* Impact Section */}
-      <section id="impact" className="max-w-6xl mx-auto py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold brand mb-8">Impact & Stories</h3>
-        <p className="text-gray-700 mb-8">Hear from those whose lives have been touched by Caring Hands of Tennessee.</p>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 bg-white rounded-xl shadow-md">
-            <p className="italic mb-2">“Thanks to the mentorship program, I’m the first in my family to attend college.”</p>
-            <p className="font-semibold">– Student, Nashville</p>
-          </div>
-          <div className="p-6 bg-white rounded-xl shadow-md">
-            <p className="italic mb-2">“The health fair helped me get the care I needed when I had nowhere else to turn.”</p>
-            <p className="font-semibold">– Community Member, Memphis</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="bg-gray-100 py-16 px-6 text-center">
-        <h3 className="text-3xl font-bold brand mb-4">Contact Us</h3>
-        <p className="mb-6 text-gray-700">We’d love to hear from you. Whether you’d like to volunteer, donate, or partner with us, reach out today.</p>
-        <p className="mb-2">Email: <a href="mailto:info@caringhandsTN.org" className="underline brand">info@caringhandsTN.org</a></p>
-        <p className="mb-2">Phone: (555) 123-4567</p>
-        <p>Address: 123 Main St, Nashville, TN</p>
-      </section>
-
-      {/* Footer */}
-      <footer className="brand-bg text-white py-6 text-center">
-        <p>&copy; {new Date().getFullYear()} Caring Hands of Tennessee. All Rights Reserved.</p>
-      </footer>
-    </div>
-  );
-}
-
+  <footer>
+    <p>&copy; 2025 Cari
