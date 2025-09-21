@@ -1,275 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caring Hands of Tennessee</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Variables */
-    :root {
-      --primary: #0b2c5d;  /* dark blue */
-      --accent: #f8a61b;   /* gold/yellow accent */
-      --light: #ffffff;
-      --gray-light: #f5f5f5;
-      --text-dark: #333333;
-      --radius: 10px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caring Hands of Tennessee</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0b2c5d; /* Dark Blue */
+    --accent: #f8a61b;  /* Gold */
+    --light: #ffffff;
+    --text-dark: #333333;
+    --radius: 12px;
+    --transition: 0.3s ease;
+  }
 
-    /* Reset & body */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background: var(--gray-light); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #f5f5f5; color: var(--text-dark); line-height: 1.6; }
 
-    a { text-decoration: none; color: var(--primary); }
-    a:hover { color: var(--accent); }
+  a { text-decoration: none; color: var(--primary); }
+  a:hover { color: var(--accent); }
 
-    img { max-width: 100%; border-radius: var(--radius); }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
 
-    header {
-      background: var(--primary);
-      color: var(--light);
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header .logo {
-      display: flex;
-      align-items: center;
-    }
-    header .logo img {
-      height: 50px;
-      margin-right: 12px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li a {
-      font-weight: 600;
-      color: var(--light);
-    }
-    nav ul li a:hover {
-      color: var(--accent);
-    }
+  header nav ul { list-style: none; display: flex; gap: 30px; }
+  header nav ul li a { color: var(--light); font-weight: 600; transition: var(--transition); }
+  header nav ul li a:hover { color: var(--accent); }
 
-    .hero {
-      position: relative;
-      background: url('banner.jpg') center/cover no-repeat;
-      color: var(--light);
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .hero:before {
-      content: '';
-      position: absolute;
-      inset:0;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-    }
+  .logo img { height: 60px; }
 
-    .wrap {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), #1b3f82);
+    color: var(--light);
+    padding: 0 20px;
+  }
+  .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+  .hero h2 { font-size: 1.7rem; font-weight: 400; max-width: 700px; }
 
-    section {
-      margin-bottom: 60px;
-    }
+  section { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
 
-    .section-title {
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 30px;
-      text-align: center;
-    }
+  .section-title { text-align: center; font-size: 2.5rem; color: var(--primary); margin-bottom: 50px; font-weight: 600; }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 20px;
-    }
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+  .service-card {
+    background: var(--light);
+    padding: 30px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  .service-card img { height: 90px; margin-bottom: 20px; }
+  .service-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
+  .service-card p { font-size: 1rem; }
 
-    .card {
-      background: var(--light);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-    .card p {
-      color: var(--text-dark);
-      line-height: 1.5;
-    }
+  .mission {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin: 80px 20px;
+  }
+  .mission h3 { font-size: 2rem; margin-bottom: 20px; }
+  .mission p { font-size: 1.2rem; max-width: 900px; margin: auto; }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-      margin: auto;
-    }
-    .form-group input,
-    .form-group textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: var(--radius);
-      font-size: 1rem;
-    }
-    .form-group button {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 12px 25px;
-      border: none;
-      border-radius: var(--radius);
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .form-group button:hover {
-      background: #d6a30f;
-    }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  footer img { height: 60px; margin-bottom: 15px; }
+  footer p { font-size: 1rem; }
 
-    footer {
-      background: var(--primary);
-      color: var(--light);
-      text-align: center;
-      padding: 30px 20px;
-    }
-  </style>
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero h2 { font-size: 1.2rem; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Caring Hands Logo">
-      <strong style="font-size:1.5rem; color: var(--light);">Caring Hands of Tennessee</strong>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#mission">Mission & Vision</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#tutoring">Tutoring</a></li>
-        <li><a href="#collab">Collaborate</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo"><img src="logo.png" alt="Caring Hands Logo"></div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#tutoring">Sign Up For Tutoring</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Empowering Lives Through Education & Care</h1>
-      <p>Healthcare. Education. Mentorship. We believe every student deserves a chance to succeed.</p>
+<section class="hero">
+  <h1>The <br>Caring Hands <br>of <br>Tennessee</h1>
+  <h2>Empowering youth through education, health, and guidance</h2>
+</section>
+
+<section id="services">
+  <div class="section-title">Services We Offer</div>
+  <p style="text-align:center; max-width:900px; margin:auto; margin-bottom:50px;">We provide a comprehensive range of programs designed to support the academic, personal, and health needs of youth in underserved communities.</p>
+  <div class="services">
+    <div class="service-card">
+      <img src="tutoring.png" alt="Academic Tutoring">
+      <h3>Academic Tutoring</h3>
+      <p>Tutoring in English, math, sciences, and ACT preparation.</p>
+    </div>
+    <div class="service-card">
+      <img src="healthcare.png" alt="Healthcare Access">
+      <h3>Healthcare Access</h3>
+      <p>Connecting youth and families with essential health resources.</p>
+    </div>
+    <div class="service-card">
+      <img src="mentorship.png" alt="Mentorship & Guidance">
+      <h3>Mentorship & Guidance</h3>
+      <p>Personalized mentorship to support growth and achievement.</p>
     </div>
   </div>
+</section>
 
-  <div class="wrap">
+<section class="mission">
+  <h3>Our Mission</h3>
+  <p>To expand access to healthcare, financial literacy, and education, empowering underserved communities to thrive.</p>
+</section>
 
-    <section id="story">
-      <div class="section-title">Our Story</div>
-      <p>In our community, many youth lack access to basic resources, tutoring, and support. Inspired to uplift them, we founded Caring Hands of Tennessee. Our mission is to ensure access to healthcare, education, and financial literacy so every young person can thrive.</p>
-    </section>
-
-    <section id="mission">
-      <div class="section-title">Mission & Vision</div>
-      <div class="cards">
-        <div class="card">
-          <h3>Mission</h3>
-          <p>To expand access to healthcare, financial literacy, and education, empowering underserved communities to thrive.</p>
-        </div>
-        <div class="card">
-          <h3>Vision</h3>
-          <p>To create a future where underserved youth thrive with health, knowledge, and opportunity.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs">
-      <div class="section-title">What We Do</div>
-      <div class="cards">
-        <div class="card">
-          <h3>Education Support</h3>
-          <p>Tutoring, mentoring, help with school resources, study tools, and more.</p>
-        </div>
-        <div class="card">
-          <h3>Healthcare Access</h3>
-          <p>Connecting youth and families with health resources, wellness checks, prevention programs, and support.</p>
-        </div>
-        <div class="card">
-          <h3>Financial Literacy</h3>
-          <p>Workshops and coaching for budgeting, saving, financial planning, and understanding money.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="tutoring">
-      <div class="section-title">Sign Up for Tutoring</div>
-      <form action="https://formspree.io/f/myzngkve" method="POST" class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subjects" placeholder="Subjects Interested In (English, Sciences, Math to Calculus, ACT)" required>
-        <textarea name="notes" rows="4" placeholder="Tell us more about your needs"></textarea>
-        <button type="submit">Sign Up</button>
-      </form>
-    </section>
-
-    <section id="collab">
-      <div class="section-title">Collaborate With Us</div>
-      <form action="https://formspree.io/f/mzzjpdwr" method="POST" class="form-group">
-        <input type="text" name="name" placeholder="Name / Organization" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Collaboration Idea" required>
-        <textarea name="message" rows="4" placeholder="How we can work together"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <section id="contact">
-      <div class="section-title">Contact Us</div>
-      <form action="https://formspree.io/f/xdkwnajn" method="POST" class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-
-  </div>
-
-  <footer>
-    <p>&copy; Caring Hands of Tennessee</p>
-  </footer>
+<footer>
+  <img src="logo.png" alt="Caring Hands Logo">
+  <p>© 2025 Caring Hands of Tennessee</p>
+</footer>
 
 </body>
 </html>
